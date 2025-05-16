@@ -1,5 +1,6 @@
 const express = require('express');
 const { Pool } = require('pg');
+const pool=require("./db")
 const bcrypt = require("bcrypt");
 const cors = require('cors');
 const app = express();
@@ -10,13 +11,13 @@ app.use(cors());
 const secretkey = "guru";
 
 // DB connection
-const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "postgres",
-  password: "guru",
-  port: 5432,
-});
+// const pool = new Pool({
+//   user: "postgres",
+//   host: "localhost",
+//   database: "postgres",
+//   password: "guru",
+//   port: 5432,
+// });
 
 pool.connect()
   .then((client) => {
